@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top-wrapper {
+    height: 954px;
+}
+
+.top-wrapper h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.container {
+    width: 1685px;
+    margin: 0 auto;
+}
+
+.contents-left {
+    width: 800px;
+    height: 823px;
+    float: left;
+    margin-top: 53px;
+}
+
+.contents-right {
+    background-color: aqua;
+    width: 800px;
+    height: 823px;
+    margin-left: 85px;
+    margin-top: 53px;
+    float: left;
+}
+
+.rank {
+    height: 667px;
+}
+
+.rank-data {
+    height: 627px;
+    border: 1px solid #000;
+    margin-top: 16px;
+}

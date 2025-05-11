@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Tsusu",
+    "character": {
+      "joker": 40,
+      "pichu": 25,
+      "sheik": 10
+    },
+    "rating": 1700
+  },
+  {
+    "name": "1",
+    "character": {
+      "miiBrawler": 50
+    },
+    "rating": 1600
+  }
+]

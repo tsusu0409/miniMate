@@ -1,4 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .header-container {
     background-color: #000;
     height: 63px;
+}
+
+.header-title {
+    float: left;
+    height: 28px;
+    width: 200px;
+    padding-left: 20px;
+}
+
+.icon-fire {
+    height: 24px;
+    float: left;
+    padding-top: 18px;
+}
+
+.prj-title {
+    color: #fff;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 12px;
+    padding-top: 12px;
+}
+
+.header-links {
+    float: right;
+    padding-top: 18px;
+    padding-right: 20px;
+}
+
+.icon-gear {
+    height: 24px;
 }

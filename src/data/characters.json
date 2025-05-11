@@ -1,0 +1,62 @@
+[
+  {
+    "id": "mario",
+    "displayName": "マリオ"
+  },
+  {
+    "id": "donkeyKong",
+    "displayName": "ドンキーコング"
+  },
+  {
+    "id": "link",
+    "displayName": "リンク"
+  },
+  {
+    "id": "samus",
+    "displayName": "サムス"
+  },
+  {
+    "id": "yoshi",
+    "displayName": "ヨッシー"
+  },
+  {
+    "id": "kirby",
+    "displayName": "カービィ"
+  },
+  {
+    "id": "fox",
+    "displayName": "フォックス"
+  },
+  {
+    "id": "pikachu",
+    "displayName": "ピカチュウ"
+  },
+  {
+    "id": "luigi",
+    "displayName": "ルイージ"
+  },
+  {
+    "id": "ness",
+    "displayName": "ネス"
+  },
+  {
+    "id": "captainFalcon",
+    "displayName": "C.ファルコン"
+  },
+  {
+    "id": "jigglypuff",
+    "displayName": "プリン"
+  },
+  {
+    "id": "pichu",
+    "displayName": "ピチュー"
+  },
+  {
+    "id": "miiBrawler",
+    "displayName": "Miiファイター 格闘タイプ"
+  },
+  {
+    "id": "joker",
+    "displayName": "ジョーカー"
+  }
+]

@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+.rank-personal {
+    width: 641px;
+    height: 44px;
+    border-bottom: 2px solid #A3A3A3;
+    margin: 40px auto;
+}
+
+.rank-rank {
+    float: left;
+    width: 78px;
+    font-size: 16px;
+    padding-top: 4px;
+}
+
+.rank-name {
+    float: left;
+    width: 300px;
+    font-size: 20px;
+}
+
+.rank-charas {
+    float: left;
+    width: 218px;
+}
+
+.rank-chara {
+    height: 30px;
+    padding-right: 10px;
+}
+
+.rank-rate {
+    float: right;
+    font-size: 20px;
+}
