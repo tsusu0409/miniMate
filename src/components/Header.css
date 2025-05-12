@@ -18,8 +18,10 @@
 
 .icon-fire {
     height: 24px;
+    width: 24px;
     float: left;
     padding-top: 18px;
+    fill: #fff;
 }
 
 .prj-title {
@@ -39,4 +41,5 @@
 
 .icon-gear {
     height: 24px;
+    width: 24px;
 }

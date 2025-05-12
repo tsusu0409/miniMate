@@ -1,7 +1,8 @@
-// App.tsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Top from './pages/Top';
 import Setting from './pages/Setting';
+import Player from './pages/Player';
+import Result from './pages/Result';
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Top />} />
         <Route path="/setting" element={<Setting />} />
+        <Route path="/player" element={<Player />} />
+        <Route path="/result" element={<Result />} />
       </Routes>
     </Router>
   );

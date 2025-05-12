@@ -2,17 +2,43 @@
   {
     "name": "Tsusu",
     "character": {
-      "joker": 40,
-      "pichu": 25,
-      "sheik": 10
+
     },
-    "rating": 1700
+    "rating": 1500
   },
   {
-    "name": "1",
+    "name": "いけけけ",
     "character": {
-      "miiBrawler": 50
+
     },
-    "rating": 1600
+    "rating": 1500
+  },
+  {
+    "name": "mocat",
+    "character": {
+
+    },
+    "rating": 1500
+  },
+  {
+    "name": "こう",
+    "character": {
+
+    },
+    "rating": 1500
+  },
+  {
+    "name": "taiga",
+    "character": {
+
+    },
+    "rating": 1500
+  },
+  {
+    "name": "ogeeen",
+    "character": {
+
+    },
+    "rating": 1500
   }
 ]

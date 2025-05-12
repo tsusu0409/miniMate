@@ -1,62 +1,89 @@
 [
-  {
-    "id": "mario",
-    "displayName": "マリオ"
-  },
-  {
-    "id": "donkeyKong",
-    "displayName": "ドンキーコング"
-  },
-  {
-    "id": "link",
-    "displayName": "リンク"
-  },
-  {
-    "id": "samus",
-    "displayName": "サムス"
-  },
-  {
-    "id": "yoshi",
-    "displayName": "ヨッシー"
-  },
-  {
-    "id": "kirby",
-    "displayName": "カービィ"
-  },
-  {
-    "id": "fox",
-    "displayName": "フォックス"
-  },
-  {
-    "id": "pikachu",
-    "displayName": "ピカチュウ"
-  },
-  {
-    "id": "luigi",
-    "displayName": "ルイージ"
-  },
-  {
-    "id": "ness",
-    "displayName": "ネス"
-  },
-  {
-    "id": "captainFalcon",
-    "displayName": "C.ファルコン"
-  },
-  {
-    "id": "jigglypuff",
-    "displayName": "プリン"
-  },
-  {
-    "id": "pichu",
-    "displayName": "ピチュー"
-  },
-  {
-    "id": "miiBrawler",
-    "displayName": "Miiファイター 格闘タイプ"
-  },
-  {
-    "id": "joker",
-    "displayName": "ジョーカー"
-  }
+  { "id": "mario", "displayname": "マリオ" },
+  { "id": "donkey_kong", "displayname": "ドンキーコング" },
+  { "id": "link", "displayname": "リンク" },
+  { "id": "samus", "displayname": "サムス" },
+  { "id": "dark_samus", "displayname": "ダークサムス" },
+  { "id": "yoshi", "displayname": "ヨッシー" },
+  { "id": "kirby", "displayname": "カービィ" },
+  { "id": "fox", "displayname": "フォックス" },
+  { "id": "pikachu", "displayname": "ピカチュウ" },
+  { "id": "luigi", "displayname": "ルイージ" },
+  { "id": "ness", "displayname": "ネス" },
+  { "id": "captain_falcon", "displayname": "キャプテン・ファルコン" },
+  { "id": "purin", "displayname": "プリン" },
+  { "id": "peach", "displayname": "ピーチ" },
+  { "id": "daisy", "displayname": "デイジー" },
+  { "id": "koopa", "displayname": "クッパ" },
+  { "id": "ice_climber", "displayname": "アイスクライマー" },
+  { "id": "sheik", "displayname": "シーク" },
+  { "id": "zelda", "displayname": "ゼルダ" },
+  { "id": "dr_mario", "displayname": "ドクターマリオ" },
+  { "id": "pichu", "displayname": "ピチュー" },
+  { "id": "falco", "displayname": "ファルコ" },
+  { "id": "marth", "displayname": "マルス" },
+  { "id": "lucina", "displayname": "ルキナ" },
+  { "id": "young_link", "displayname": "こどもリンク" },
+  { "id": "ganondorf", "displayname": "ガノンドロフ" },
+  { "id": "mewtwo", "displayname": "ミュウツー" },
+  { "id": "roy", "displayname": "ロイ" },
+  { "id": "chrom", "displayname": "クロム" },
+  { "id": "mr_game_and_watch", "displayname": "Mr. ゲーム&ウォッチ" },
+  { "id": "meta_knight", "displayname": "メタナイト" },
+  { "id": "pit", "displayname": "ピット" },
+  { "id": "black_pit", "displayname": "ブラックピット" },
+  { "id": "zero_suit_samus", "displayname": "ゼロスーツサムス" },
+  { "id": "wario", "displayname": "ワリオ" },
+  { "id": "snake", "displayname": "スネーク" },
+  { "id": "ike", "displayname": "アイク" },
+  { "id": "pokemon_trainer", "displayname": "ポケモントレーナー" },
+  { "id": "diddy_kong", "displayname": "ディディーコング" },
+  { "id": "lucas", "displayname": "リュカ" },
+  { "id": "sonic", "displayname": "ソニック" },
+  { "id": "dedede", "displayname": "デデデ" },
+  { "id": "pikmin_and_olimar", "displayname": "ピクミン&オリマー" },
+  { "id": "lucario", "displayname": "ルカリオ" },
+  { "id": "robot", "displayname": "ロボット" },
+  { "id": "toon_link", "displayname": "トゥーンリンク" },
+  { "id": "wolf", "displayname": "ウルフ" },
+  { "id": "murabito", "displayname": "むらびと" },
+  { "id": "rockman", "displayname": "ロックマン" },
+  { "id": "wii_fit_trainer", "displayname": "Wii Fit トレーナー" },
+  { "id": "rosetta_and_chiko", "displayname": "ロゼッタ&チコ" },
+  { "id": "little_mac", "displayname": "リトル・マック" },
+  { "id": "gekkouga", "displayname": "ゲッコウガ" },
+  { "id": "mii_brawler", "displayname": "Miiファイター 格闘タイプ" },
+  { "id": "mii_swordfighter", "displayname": "Miiファイター 剣術タイプ" },
+  { "id": "mii_gunner", "displayname": "Miiファイター 射撃タイプ" },
+  { "id": "palutena", "displayname": "パルテナ" },
+  { "id": "pac_man", "displayname": "パックマン" },
+  { "id": "reflet", "displayname": "ルフレ" },
+  { "id": "shulk", "displayname": "シュルク" },
+  { "id": "koopa_jr", "displayname": "クッパ Jr." },
+  { "id": "duck_hunt", "displayname": "ダックハント" },
+  { "id": "ryu", "displayname": "リュウ" },
+  { "id": "ken", "displayname": "ケン" },
+  { "id": "cloud", "displayname": "クラウド" },
+  { "id": "kamui", "displayname": "カムイ" },
+  { "id": "bayonetta", "displayname": "ベヨネッタ" },
+  { "id": "inkling", "displayname": "インクリング" },
+  { "id": "ridley", "displayname": "リドリー" },
+  { "id": "simon", "displayname": "シモン" },
+  { "id": "richter", "displayname": "リヒター" },
+  { "id": "king_k_rool", "displayname": "キングクルール" },
+  { "id": "shizue", "displayname": "しずえ" },
+  { "id": "gaogaen", "displayname": "ガオガエン" },
+  { "id": "packun_flower", "displayname": "パックンフラワー" },
+  { "id": "joker", "displayname": "ジョーカー" },
+  { "id": "dq_hero", "displayname": "勇者" },
+  { "id": "banjo_and_kazooie", "displayname": "バンジョー&カズーイ" },
+  { "id": "terry", "displayname": "テリー" },
+  { "id": "byleth", "displayname": "ベレト／ベレス" },
+  { "id": "minmin", "displayname": "ミェンミェン" },
+  { "id": "steve", "displayname": "スティーブ／アレックス" },
+  { "id": "sephiroth", "displayname": "セフィロス" },
+  { "id": "pyra_mythra", "displayname": "ホムラ／ヒカリ" },
+  { "id": "kazuya", "displayname": "カズヤ" },
+  { "id": "sora", "displayname": "ソラ" },
+  { "id": "random", "displayname": "おまかせ" }
 ]
