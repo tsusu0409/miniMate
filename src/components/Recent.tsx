@@ -1,68 +1,82 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from 'react';
 import './Recent.css';
 
-type PlayerInfo = {
+// Top.tsxと同じバトル履歴の型定義を再利用
+type Battle = {
+  timestamp: number;
+  winner: {
     player: string;
     character: string;
     rateOld: number;
     rateNew: number;
+  };
+  loser: {
+    player: string;
+    character: string;
+    rateOld: number;
+    rateNew: number;
+  };
 };
 
-type Battle = {
-    timestamp: number;
-    winner: PlayerInfo;
-    loser: PlayerInfo;
-};
-
+// RecentコンポーネントのProps型定義
 type RecentProps = {
-    index: number;
+  index: number; // 表示する対戦履歴のインデックス（0から始まる）
 };
 
-const Recent: React.FC<RecentProps> = ({ index })=> {
-    const [battle, setBattle] = useState<Battle | null>(null);
+const Recent: React.FC<RecentProps> = ({ index }) => {
+  const [battle, setBattle] = useState<Battle | null>(null);
 
-    useEffect(() => {
-        const stored = localStorage.getItem("battles.json");
-        if (stored) {
-            const parsed: Battle[] = JSON.parse(stored);
-            const sorted = parsed.sort((a, b) => b.timestamp - a.timestamp);
-            if (sorted[index]) {
-                setBattle(sorted[index]);
-            }
-        }
-    }, [index]);
+  useEffect(() => {
+    // localStorageからバトル履歴を読み込む
+    const existingBattles = localStorage.getItem('battles');
+    const loadedBattles: Battle[] = existingBattles ? JSON.parse(existingBattles) : [];
 
-  if (!battle) return null;
+    // 最新の対戦がリストの先頭に来るように逆順にする
+    const reversedBattles = [...loadedBattles].reverse();
 
-    return(
-        <div>
-            <div className="winner-section">
-                <span className="result-tag win">Win</span>
-                <img src={`/${battle.winner.character}.png`} className="character-icon" />
-                <span className="player-name">{battle.winner.player}</span>
-                <span className="rating">
-                    {battle.winner.rateOld} → {battle.winner.rateNew}
-                </span>
-            </div>
-            <div className="loser-section">
-                <span className="result-tag win">Win</span>
-                <img src={`/${battle.winner.character}.png`} className="character-icon" />
-                <span className="player-name">{battle.winner.player}</span>
-                <span className="rating">
-                    {battle.winner.rateOld} → {battle.winner.rateNew}
-                </span>
-            </div>
-            <span className="battle-time">
-                {
-                    new Date(battle.timestamp).toLocaleDateString("ja-JP",{
-                        hour: "2-digit",
-                        minute: "2-digit",
-                        hour12: false,
-                    })
-                }
-            </span>
-        </div>
-    );
+    // 指定されたインデックスの対戦データをセット
+    if (reversedBattles && reversedBattles.length > index) {
+      setBattle(reversedBattles[`${index}`]);
+    } else {
+      setBattle(null); // データがない場合はnullを設定
+    }
+  }, [index]); // indexが変更されたら再実行
+
+  // タイムスタンプを読みやすい日付と時刻の形式に変換 (HH:MM形式)
+  const formatTime = (timestamp: number) => {
+    const date = new Date(timestamp);
+    return date.toLocaleTimeString('ja-JP', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false, // 24時間形式
+    });
+  };
+
+  if (!battle) {
+    // 対戦データがない場合は空の要素を返す
+    // レイアウトを維持するために、heightをCSSで設定するか、ここに固定の空白要素を置くと良いでしょう
+    return <div className="recent-item recent-item-empty"></div>;
+  }
+
+  return (
+    <div className='recent-item'>
+      <div className='winner-info'>
+        <span className='win-indicator'>Win</span>
+        {/* キャラクターアイコンは、実際にはimgタグや専用コンポーネントに置き換えることを想定 */}
+        <span className='character-icon'>{battle.winner.character}</span>
+        <span className='player-name'>{battle.winner.player}</span>
+        <span className='rating-change'>{battle.winner.rateOld} → {battle.winner.rateNew}</span>
+      </div>
+      <div className='loser-info'>
+        <span className='lose-indicator'>Lose</span>
+        {/* キャラクターアイコンは、実際にはimgタグや専用コンポーネントに置き換えることを想定 */}
+        <span className='character-icon'>{battle.loser.character}</span>
+        <span className='player-name'>{battle.loser.player}</span>
+        <span className='rating-change'>{battle.loser.rateOld} → {battle.loser.rateNew}</span>
+      </div>
+      <span className='match-time'>{formatTime(battle.timestamp)}</span>
+    </div>
+  );
 };
 
 export default Recent;

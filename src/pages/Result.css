@@ -1,0 +1,279 @@
+/* Universal Reset & Link Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+a {
+    color: inherit;
+}
+
+/* Result Page Specific Wrapper & Container */
+.result-wrapper {
+    min-height: 954px;
+    padding: 20px 0;
+}
+
+.result-wrapper .container {
+    width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 0;
+}
+
+/* Heading Styles */
+.result-wrapper h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+/* --- 新しく追加するセクションのスタイル --- */
+.delete-all-section {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #000; /* 黒枠線 */
+    border-radius: 0; /* 角丸なし */
+    background-color: #ffe0e0; /* 警告を示す薄い赤背景 */
+}
+
+.delete-all-button {
+    height: 50px; /* 少し大きめ */
+    width: 250px; /* 目立つように幅を広げる */
+    background-color: #dc3545; /* 赤色 */
+    color: white;
+    border: none;
+    border-radius: 0; /* 角丸なし */
+    border-bottom: 3px solid #c82333; /* 濃い赤の底線 */
+    cursor: pointer;
+    font-size: 18px; /* 大きめのフォント */
+    transition: all .2s;
+    margin-top: 0; /* 不要なマージンをリセット */
+    margin-left: 0; /* 不要なマージンをリセット */
+}
+
+.delete-all-button:hover {
+    margin-top: 3px;
+    border-bottom: 0 solid #c82333;
+}
+
+.warning-text {
+    color: #a70000; /* 警告色の文字 */
+    font-size: 14px;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+/* --- ここまで新しく追加するセクションのスタイル --- */
+
+
+/* Section Styling */
+.result-list {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 0;
+    background-color: #f9f9f9;
+}
+
+.result-list h2 {
+    font-size: 22px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Battle List Styling */
+.result-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.battle-info {
+    flex-grow: 1;
+    min-width: 450px;
+}
+
+.battle-info .timestamp {
+    display: block;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.battle-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.battle-info .winner-name,
+.battle-info .loser-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.battle-info .winner-char,
+.battle-info .loser-char {
+    color: #555;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.battle-info .rate-change {
+    font-size: 14px;
+    color: #007bff;
+}
+
+.battle-info .vs {
+    font-weight: bold;
+    margin: 5px 20px;
+    color: #666;
+    font-size: 18px;
+}
+
+.result-actions {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    gap: 10px;
+}
+
+.result-actions button {
+    height: 38px;
+    width: 100px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #0056b3;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all .2s;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.result-actions button:hover {
+    margin-top: 2px;
+    border-bottom: 0 solid #0056b3;
+}
+
+.result-actions .delete-button {
+    background-color: #dc3545;
+    border-bottom-color: #c82333;
+}
+
+.result-actions .delete-button:hover {
+    border-bottom: 0 solid #c82333;
+}
+
+.result-actions .edit-char-button {
+    background-color: #ffc107;
+    border-bottom-color: #e0a800;
+    color: #333;
+}
+
+.result-actions .edit-char-button:hover {
+    border-bottom: 0 solid #e0a800;
+}
+
+/* Editing Battle Controls */
+.editing-battle-controls {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.editing-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.editing-section p {
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.editing-section select {
+    height: 40px;
+    padding: 5px 10px;
+    border: 1px solid #000;
+    border-radius: 0;
+    font-size: 16px;
+    flex-grow: 1;
+    max-width: 200px;
+}
+
+.edit-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.edit-buttons button {
+    height: 38px;
+    width: 90px;
+    border-radius: 0;
+    font-size: 14px;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.edit-buttons .save-button {
+    background-color: #28a745;
+    border-bottom-color: #218838;
+}
+
+.edit-buttons .save-button:hover {
+    border-bottom: 0 solid #218838;
+}
+
+.edit-buttons .cancel-button {
+    background-color: #6c757d;
+    border-bottom-color: #5a6268;
+}
+
+.edit-buttons .cancel-button:hover {
+    border-bottom: 0 solid #5a6268;
+}
+
+/* Back Link Styling */
+.back-link {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}

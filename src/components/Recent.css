@@ -1,6 +1,103 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Recent.tsx の各対戦結果アイテムのスタイル */
+.recent-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px; /* 上下左右のパディングを調整 */
+    border-bottom: 1px solid #000; /* アイテム間の区切り線は黒 */
+    font-size: 14px;
+    height: 60px; /* 一定の高さを確保し、縦の揃えを良くする */
+    box-sizing: border-box; /* パディングを高さに含める */
+    position: relative; /* 時間表示のために相対位置指定 */
 }
 
+/* 最後のアイテムには下線なし */
+.recent-item:last-child {
+    border-bottom: none;
+}
+
+/* データがない場合の空のアイテム */
+.recent-item-empty {
+    height: 60px; /* データがある場合と同じ高さを維持 */
+    border-bottom: 1px solid #000;
+}
+
+/* Win/Lose 共通情報ブロック */
+.winner-info,
+.loser-info {
+    display: flex;
+    align-items: center;
+    width: 45%; /* 勝者と敗者でほぼ半分ずつ */
+    gap: 5px; /* 要素間の隙間 */
+}
+
+/* Win/Lose インジケーター */
+.win-indicator,
+.lose-indicator {
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 0; /* 角丸なし */
+    font-size: 12px;
+    flex-shrink: 0; /* 縮小させない */
+    height: 20px; /* 高さを指定 */
+    display: flex; /* 中央揃えのため */
+    align-items: center; /* 垂直方向中央揃え */
+    justify-content: center; /* 水平方向中央揃え */
+}
+
+.win-indicator {
+    background-color: #f0f8ff; /* 薄い青 */
+    color: #007bff; /* 青文字 */
+    border: 1px solid #007bff; /* 青い枠線 */
+}
+
+.lose-indicator {
+    background-color: #fff0f5; /* 薄い赤 */
+    color: #dc3545; /* 赤文字 */
+    border: 1px solid #dc3545; /* 赤い枠線 */
+}
+
+/* キャラクターアイコン（現在はテキスト表示） */
+.character-icon {
+    width: 30px; /* アイコンの幅を想定 */
+    height: 30px; /* アイコンの高さを想定 */
+    background-color: #eee; /* アイコンのプレースホルダー */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px; /* キャラ名が長い場合に備え小さめに */
+    border: 1px solid #ccc; /* アイコンの枠線 */
+    flex-shrink: 0; /* 縮小させない */
+    overflow: hidden; /* はみ出しを隠す */
+    text-overflow: ellipsis; /* 長いテキストを省略 */
+    white-space: nowrap; /* 強制的に1行 */
+}
+
+/* プレイヤー名 */
+.player-name {
+    font-weight: bold;
+    font-size: 16px;
+    flex-grow: 1; /* 可能な限りスペースを占める */
+    white-space: nowrap; /* 折り返さない */
+    overflow: hidden; /* はみ出しを隠す */
+    text-overflow: ellipsis; /* 長いテキストを省略 */
+    margin-right: 10px; /* レートとの間隔 */
+}
+
+/* レート変化 */
+.rating-change {
+    font-size: 13px;
+    color: #555;
+    flex-shrink: 0; /* 縮小させない */
+    text-align: right; /* 右寄せ */
+}
+
+/* 試合時間 */
+.match-time {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #888;
+    flex-shrink: 0; /* 縮小させない */
+}
