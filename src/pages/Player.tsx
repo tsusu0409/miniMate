@@ -5,7 +5,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
-// Top.tsxと同じ型定義を再利用
 type CharacterMap = {
   [characterId: string]: number | undefined;
 };
@@ -22,20 +21,17 @@ const PlayerPage: React.FC = () => {
   const [editingPlayerName, setEditingPlayerName] = useState<string | null>(null);
   const [editedPlayerName, setEditedPlayerName] = useState('');
 
-  // コンポーネントマウント時にプレイヤーデータをLocalStorageから読み込む
   useEffect(() => {
     const existingPlayers = localStorage.getItem('players');
     const loadedPlayers: Player[] = existingPlayers ? JSON.parse(existingPlayers) : [];
     setPlayers(loadedPlayers);
   }, []);
 
-  // プレイヤーデータをLocalStorageに保存するヘルパー関数
   const savePlayers = (updatedPlayers: Player[]) => {
     localStorage.setItem('players', JSON.stringify(updatedPlayers, null, 2));
-    setPlayers(updatedPlayers); // Stateも更新
+    setPlayers(updatedPlayers);
   };
 
-  // 新しいプレイヤーを追加する
   const handleAddPlayer = () => {
     if (!newPlayerName.trim()) {
       alert('プレイヤー名を入力してください');
@@ -48,20 +44,17 @@ const PlayerPage: React.FC = () => {
 
     const updatedPlayers = [
       ...players,
-      { name: newPlayerName.trim(), character: {}, rating: 1500 } // 初期レートを1500に設定
+      { name: newPlayerName.trim(), character: {}, rating: 1500 } 
     ];
     savePlayers(updatedPlayers);
-    setNewPlayerName(''); // 入力フィールドをクリア
+    setNewPlayerName('');
   };
 
-  // プレイヤーを削除する
   const handleDeletePlayer = (playerName: string) => {
     if (window.confirm(`${playerName} を本当に削除しますか？\n関連する対戦履歴も削除されます。`)) {
-      // プレイヤーを削除
       const updatedPlayers = players.filter(p => p.name !== playerName);
       savePlayers(updatedPlayers);
 
-      // 関連する対戦履歴も削除
       const existingBattles = localStorage.getItem('battles');
       let battles = existingBattles ? JSON.parse(existingBattles) : [];
       const updatedBattles = battles.filter((battle: any) =>
@@ -73,20 +66,17 @@ const PlayerPage: React.FC = () => {
     }
   };
 
-  // プレイヤー名の編集を開始する
   const handleEditStart = (playerName: string) => {
     setEditingPlayerName(playerName);
-    setEditedPlayerName(playerName); // 現在の名前を編集フィールドにセット
+    setEditedPlayerName(playerName);
   };
 
-  // プレイヤー名の編集を保存する
   const handleEditSave = (originalName: string) => {
     if (!editedPlayerName.trim()) {
       alert('新しいプレイヤー名を入力してください');
       return;
     }
     if (editedPlayerName.trim() === originalName) {
-      // 名前が変わっていない場合は何もしない
       setEditingPlayerName(null);
       return;
     }
@@ -100,7 +90,6 @@ const PlayerPage: React.FC = () => {
     );
     savePlayers(updatedPlayers);
 
-    // 対戦履歴内のプレイヤー名も更新
     const existingBattles = localStorage.getItem('battles');
     let battles = existingBattles ? JSON.parse(existingBattles) : [];
     const updatedBattles = battles.map((battle: any) => {
@@ -114,11 +103,10 @@ const PlayerPage: React.FC = () => {
     });
     localStorage.setItem('battles', JSON.stringify(updatedBattles, null, 2));
 
-    setEditingPlayerName(null); // 編集モードを終了
+    setEditingPlayerName(null);
     alert(`${originalName} のプレイヤー名を ${editedPlayerName.trim()} に変更しました`);
   };
 
-  // プレイヤー名の編集をキャンセルする
   const handleEditCancel = () => {
     setEditingPlayerName(null);
     setEditedPlayerName('');

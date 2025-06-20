@@ -53,8 +53,6 @@ const Recent: React.FC<RecentProps> = ({ index }) => {
   };
 
   if (!battle) {
-    // 対戦データがない場合は空の要素を返す
-    // レイアウトを維持するために、heightをCSSで設定するか、ここに固定の空白要素を置くと良いでしょう
     return <div className="recent-item recent-item-empty"></div>;
   }
 
@@ -62,15 +60,27 @@ const Recent: React.FC<RecentProps> = ({ index }) => {
     <div className='recent-item'>
       <div className='winner-info'>
         <span className='win-indicator'>Win</span>
-        {/* キャラクターアイコンは、実際にはimgタグや専用コンポーネントに置き換えることを想定 */}
-        <span className='character-icon'>{battle.winner.character}</span>
+        <span className='character-icon'>
+                  <img
+                    key={battle.winner.character}
+                    src={`/assets/images/${battle.winner.character}.png`}
+                    alt={battle.winner.character}
+                    className="rank-chara"
+                  />
+        </span>
         <span className='player-name'>{battle.winner.player}</span>
         <span className='rating-change'>{battle.winner.rateOld} → {battle.winner.rateNew}</span>
       </div>
       <div className='loser-info'>
         <span className='lose-indicator'>Lose</span>
-        {/* キャラクターアイコンは、実際にはimgタグや専用コンポーネントに置き換えることを想定 */}
-        <span className='character-icon'>{battle.loser.character}</span>
+        <span className='character-icon'>
+                  <img
+                    key={battle.loser.character}
+                    src={`/assets/images/${battle.loser.character}.png`}
+                    alt={battle.loser.character}
+                    className="rank-chara"
+                  />
+        </span>
         <span className='player-name'>{battle.loser.player}</span>
         <span className='rating-change'>{battle.loser.rateOld} → {battle.loser.rateNew}</span>
       </div>
