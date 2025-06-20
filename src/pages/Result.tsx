@@ -82,13 +82,6 @@ const ResultPage: React.FC = () => {
       const updatedBattles = battles.filter((_, index) => index !== indexToDelete);
       saveBattles(updatedBattles);
 
-      const K = 32;
-      const clamp = (point: number, min: number, max: number) => {
-        if (point < min) return min;
-        else if (max < point) return max;
-        else return point;
-      };
-
       const originalWinner = players.find(p => p.name === battle.winner.player);
       const originalLoser = players.find(p => p.name === battle.loser.player);
 
